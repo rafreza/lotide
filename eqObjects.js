@@ -1,23 +1,4 @@
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`😁😁😁Assertion passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`😩😩😩Assertion failed: ${actual} !== ${expected}`);
-  }
-};
-
-const eqArrays = function(arr1, arr2) {
-  if (arr1.length !== arr2.length) {
-    return false;
-  } else {
-    for (let i = 0; i < arr1.length; i++) {
-      if (arr1[i] !== arr2[i]) {
-        return false;
-      }
-    }
-    return true;
-  }
-};
+const eqArrays = require('./eqArrays');
 
 const eqObjects = function(object1, object2) {
   let keys1 = Object.keys(object1);
@@ -42,6 +23,9 @@ const eqObjects = function(object1, object2) {
   }
   return true;
 }
+
+module.exports = eqObjects;
+/*
 const ab = {a: "1", b: "2"};
 const ba = {b: "2", a: "1"};
 const abc = {a: "1", b: "2", c: "3"};
@@ -57,3 +41,4 @@ assertEqual(eqObjects(cd, cd2), false);
 const hola = { a: [1, 2, 3], b: [3, 3, 4]};
 const hello = { a: [1, 2, 3], b:[3, 2, 4]}
 assertEqual(eqObjects(hola, hello), false);
+*/

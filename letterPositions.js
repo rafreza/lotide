@@ -2,7 +2,6 @@ const letterPositions = function (sentence) {
   const results = {};
   let counter = 0;
   for (let letter of sentence) {
-    let index = [];
     if (letter !== ' ') {
       if (results[letter]) {
         results[letter].push(counter);
